@@ -9,3 +9,4 @@ console.log(quaseArray[0])
 
 const meuArray = ['Rafael', 'Ana', 'Lisa']
 console.log(quaseArray.toString(), meuArray)
+

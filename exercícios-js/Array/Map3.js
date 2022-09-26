@@ -22,3 +22,4 @@ const apenasPreco = produto => produto.preco
 
 const resultado = carrinho.map2(paraObjeto).map2(apenasPreco)
 console.log(resultado)
+

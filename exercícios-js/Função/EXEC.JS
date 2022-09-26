@@ -472,3 +472,127 @@ function elaborarResultado(contador100, contador50, contador10, contador5, conta
 console.log(dinheiro(151))
 
 // 21
+
+function calcularValorConvenio(idade) {
+    const valorConvenio = 100
+    if (idade < 10) {
+        return valorConvenio + 80
+    } else if (idade < 30) {
+        return valorConvenio + 50
+    } else if (idade < 60) {
+        return valorConvenio + 95
+    } else {
+        return valorConvenio + 130
+    }
+}
+
+console.log(calcularValorConvenio(8))
+console.log(calcularValorConvenio(28))
+console.log(calcularValorConvenio(58))
+console.log(calcularValorConvenio(68))
+
+// 22
+
+function calcularAnuidade(mes, valor) {
+    if (mes > 0 && mes < 13) {
+        atraso = mes - 1
+        return (valor * ((1 + (5 / 100)) ** atraso)).toFixed(2)
+    } else {
+        return 'MÊS INVALIDO'
+    }
+}
+
+console.log(calcularAnuidade(2, 100))
+console.log(calcularAnuidade(5, 100))
+console.log(calcularAnuidade(3, 100))
+console.log(calcularAnuidade(13, 100))
+
+// 23
+
+function notaFinal(codigoDoAluno, nota1, nota2, nota3) {
+    let notas = []
+    notas.push(nota1)
+    notas.push(nota2)
+    notas.push(nota3)
+    notas.sort((a, b) => a < b ? 1 : -1)
+
+    let media = (notas[0] * 4 + notas[1] * 3 + notas[2] * 3) / 10
+    console.log(`Codigo do aluno: ${codigoDoAluno}. Notas: ${nota1}, ${nota2}, ${nota3}. ${media < 5 ? 'Reprovado' : 'Aprovado.'}`)
+}
+
+notaFinal(12, 5.5, 1.8, 2.2)
+
+//24
+function helloWorld() {
+    let i = 0
+    while (i < 11) {
+        console.log("Hello World");
+        i++
+    }
+}
+
+helloWorld()
+
+// 25
+
+function imprimirNumeros () {
+    for( let i = 1; i <=50; i++){
+        console.log(i)
+    }
+}
+
+imprimirNumeros()
+
+//26
+
+function numeroPares() {
+    for(let i = 0; i <=100; i++){
+        if(i%2 == 0) {
+        console.log(i)
+        }
+    }
+}
+
+numeroPares()
+
+// 27
+
+function crescimento(altura1, taxa1, altura2, taxa2) {
+    if(altura1 == altura2){
+        if (taxa1 > taxa2) {
+            return 'A criança 1 ultrapassará a criança 2 em 1 ano.'
+        } else if(taxa1 < taxa2) {
+            return 'A criança 2 ultrapassará a criança 1 em 1 ano.'
+        }else{
+            return 'As crianças tem igual altura e crescimento.'
+        }
+    } else {
+        if (altura1 > altura2) {
+            if(taxa1 >= taxa2){
+                return 'A criança menor não ultrapassará a maior.'
+            }else{
+               return `A criança menor ultrapassará a maior em ${calcularTempo(altura2, taxa2, altura1, taxa1)} anos` 
+            }
+        } else {
+            if(taxa2 >= taxa1){
+                return 'A criança menor não ultrapassará a maior.'
+            }else{
+               return `A criança menor ultrapassará a maior em ${calcularTempo(altura1, taxa1, altura2, taxa2)} anos` 
+            }
+        }
+    }
+}
+
+function calcularTempo(alturaMenor, taxaAlturaMenor, alturaMaior, taxaAlturaMaior){
+    let quantidadeAnos = 0
+    while (alturaMenor < alturaMaior) {
+        alturaMenor += taxaAlturaMenor
+        alturaMaior += taxaAlturaMaior
+        quantidadeAnos++
+    }
+    return quantidadeAnos
+}
+
+console.log(crescimento(150, 2, 130, 4));
+
+// 28
